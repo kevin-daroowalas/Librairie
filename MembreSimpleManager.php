@@ -51,7 +51,7 @@ class MembreSimpleManager
     // The UpdateProfile function updates the info of the present user
     public function UpdateProfileInfo(MembreSimple $ms)
     {
-         $id=$ua->id();
+         $id=$ms->id();
         $query=$this->_db->prepare("UPDATE utilisateur SET RefMembre = :RefMembre,Prenom = :Prenom,Nom = :Nom,MembreType = :MembreType,Adresse = :Adresse,Courriel = :Adresse ,AnneeNaissance= :AnneeNaissance WHERE RefMembre='".$id."'");
         $query->bindValue(":RefMembre,$ms->RefMembre()");
         $query->bindValue(":Prenom,$ms->Prenom()");
